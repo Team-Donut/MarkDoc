@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/style.css" />
+    <title></title>
+  </head>
+  <body>
+    <div id="layout">
+      
+      <a href="#menu" id="menuLink" class="menu-link">
+        <!-- Hamburger icon -->
+        <span></span>
+      </a>
+      
+      <nav id = "menu">
+        <ul>
+<li><a class="active" href="index.html">index</a></li>
+<li class="heading"><span>folder</span></li>
+<ul>
+<li><a class="" href="folder/hello.html">hello</a></li>
+</ul>
+<li><a class="" href="hello.html">hello</a></li>
+</ul>
+      </nav>
+
+      <article id = "main" class = "content">
+        <h1 id="markdoc">MarkDoc <a class="heading-anchor-permalink" href="#markdoc">#</a></h1>
+<h2 id="a-simple%2C-lightweight-markdown-static-site-generator-using-express.">A simple, lightweight Markdown static site generator using Express. <a class="heading-anchor-permalink" href="#a-simple%2C-lightweight-markdown-static-site-generator-using-express.">#</a></h2>
+<p>MarkDoc is made using Express and the package <a href="https://www.npmjs.com/package/markdown-folder-to-html"><code>markdown-folder-to-html</code></a>.</p>
+<h3 id="writing">Writing <a class="heading-anchor-permalink" href="#writing">#</a></h3>
+<p><em>All the files in <code>_docs</code> directory is treated as separate HTML pages.</em>
+<strong>The <code>docs</code> directory is where all the <code>.md</code> files are located and <code>_docs</code> is where all the HTML files of the converted markdown files are located.</strong></p>
+<p>To write a new page, create a <code>.md</code> file in the <code>docs</code> folder. Once you type in all the markdown text in the file, in the console run</p>
+<pre><code>npm run docs
+</code></pre>
+<p>That will convert the md files into <code>.html</code>, which is stored in the <code>_docs</code> folder. The URL of that page goes by the file name.</p>
+<p>In the <code>_docs</code> folder, which can be edited using the <code>index.md</code> file in the <code>docs</code> folder, there is a <code>index.html</code> file which is the main page of your website.</p>
+<h3 id="default-template">Default template <a class="heading-anchor-permalink" href="#default-template">#</a></h3>
+<p>The basic HTML structure of your webpage is located in the <code>template.html</code> file in the <code>docs</code> folder.</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;/style.css&quot; /&gt;
+    &lt;title&gt;Blog Post&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id=&quot;layout&quot;&gt;
+      
+      
+      &lt;nav id = &quot;menu&quot;&gt;
+        &lt;!--NAV--&gt;
+      &lt;/nav&gt;
+
+      &lt;article id = &quot;main&quot; class = &quot;content&quot;&gt;
+        &lt;!--CONTENT--&gt;
+      &lt;/article&gt;
+    &lt;/div&gt;
+
+    &lt;script&gt;
+      // FROM http://purecss.io/js/ui.js
+      (function(window, document) {
+        var layout = document.getElementById(&quot;layout&quot;),
+          menu = document.getElementById(&quot;menu&quot;),
+          menuLink = document.getElementById(&quot;menuLink&quot;);
+
+        function toggleClass(element, className) {
+          var classes = element.className.split(/\s+/),
+            length = classes.length,
+            i = 0;
+
+          for (; i &lt; length; i++) {
+            if (classes[i] === className) {
+              classes.splice(i, 1);
+              break;
+            }
+          }
+          // The className is not found
+          if (length === classes.length) {
+            classes.push(className);
+          }
+
+          element.className = classes.join(&quot; &quot;);
+        }
+
+        menuLink.onclick = function(e) {
+          var active = &quot;active&quot;;
+
+          e.preventDefault();
+          toggleClass(layout, active);
+          toggleClass(menu, active);
+          toggleClass(menuLink, active);
+        };
+      })(this, this.document);
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+
+</code></pre>
+<p>You can edit the template however you like, but remember to add <code>&lt;!--NAV--&gt;</code> to wherever you want the navigation bar should be and add <code>&lt;!--BODY--&gt;</code> to where the page content should be. Also, you can modify the structure of each of the HTML files in the <code>_docs</code> folder.</p>
+<h3 id="custom-styles">Custom Styles <a class="heading-anchor-permalink" href="#custom-styles">#</a></h3>
+<p>All the styles are located in <code>public/style.css</code>. These styles are applied to all the pages. You can also modify</p>
+<h3 id="creating-subdivisions">Creating subdivisions <a class="heading-anchor-permalink" href="#creating-subdivisions">#</a></h3>
+<p>You can add a folder in <code>docs</code> and add files, and this will act as subdivisions for pages!</p>
+<p><strong>When adding folders to act as subdivisions, make sure to add it in the <code>docs</code> folder and not <code>_docs</code> folder as the folders will not be shown!</strong></p>
+<p>By Khaleel Gibran</p>
+
+      </article>
+    </div>
+
+    <script>
+      // FROM http://purecss.io/js/ui.js
+      (function(window, document) {
+        var layout = document.getElementById("layout"),
+          menu = document.getElementById("menu"),
+          menuLink = document.getElementById("menuLink");
+
+        function toggleClass(element, className) {
+          var classes = element.className.split(/\s+/),
+            length = classes.length,
+            i = 0;
+
+          for (; i < length; i++) {
+            if (classes[i] === className) {
+              classes.splice(i, 1);
+              break;
+            }
+          }
+          // The className is not found
+          if (length === classes.length) {
+            classes.push(className);
+          }
+
+          element.className = classes.join(" ");
+        }
+
+        menuLink.onclick = function(e) {
+          var active = "active";
+
+          e.preventDefault();
+          toggleClass(layout, active);
+          toggleClass(menu, active);
+          toggleClass(menuLink, active);
+        };
+      })(this, this.document);
+      
+      window.onload = function() {
+        let title = document.getElementsByTagName("h1")[0].innerText;
+        document.title = title;
+      }
+    </script>
+  </body>
+</html>
