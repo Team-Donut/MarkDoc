@@ -6,17 +6,16 @@
   </head>
   <body>
     <div id="layout">
-      
       <a href="#menu" id="menuLink" class="menu-link">
         <!-- Hamburger icon -->
         <span></span>
       </a>
-      
-      <nav id = "menu">
+
+      <nav id="menu">
         <!--NAV-->
       </nav>
 
-      <article id = "main" class = "content">
+      <article id="main" class="content">
         <!--CONTENT-->
       </article>
     </div>
@@ -56,11 +55,11 @@
           toggleClass(menuLink, active);
         };
       })(this, this.document);
-      
+
       window.onload = function() {
         let title = document.getElementsByTagName("h1")[0].innerText;
         document.title = title;
-      }
+      };
     </script>
   </body>
 </html>

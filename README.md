@@ -1,26 +1,28 @@
-# MarkDoc 
+# MarkDoc
 
 ## A simple, lightweight Markdown static site generator using Express.
 
-MarkDoc is made using Express and the package [`markdown-folder-to-html`](https://www.npmjs.com/package/markdown-folder-to-html). 
+MarkDoc is made using Express and the package [`markdown-folder-to-html`](https://www.npmjs.com/package/markdown-folder-to-html).
 
 ### Writing
 
-*All the files in `_docs` directory is treated as separate HTML pages.*
+_All the files in `_docs` directory is treated as separate HTML pages._
 **The `docs` directory is where all the `.md` files are located and `_docs` is where all the HTML files of the converted markdown files are located.**
 
-To write a new page, create a `.md` file in the `docs` folder. Once you type in all the markdown text in the file, in the console run 
+To write a new page, create a `.md` file in the `docs` folder. Once you type in all the markdown text in the file, in the console run
+
 ```
 npm run docs
 ```
 
-That will convert the md files into `.html`, which is stored in the `_docs` folder. The URL of that page goes by the file name. 
+That will convert the md files into `.html`, which is stored in the `_docs` folder. The URL of that page goes by the file name.
 
-In the `_docs` folder, which can be edited using the `index.md` file in the `docs` folder, there is a `index.html` file which is the main page of your website. 
+In the `_docs` folder, which can be edited using the `index.md` file in the `docs` folder, there is a `index.html` file which is the main page of your website.
 
 ### Default template
 
-The basic HTML structure of your webpage is located in the `template.html` file in the `docs` folder. 
+The basic HTML structure of your webpage is located in the `template.html` file in the `docs` folder.
+
 ```
 <!DOCTYPE html>
 <html>
@@ -30,8 +32,8 @@ The basic HTML structure of your webpage is located in the `template.html` file 
   </head>
   <body>
     <div id="layout">
-      
-      
+
+
       <nav id = "menu">
         <!--NAV-->
       </nav>
@@ -86,7 +88,7 @@ You can edit the template however you like, but remember to add `<!--NAV-->` to 
 
 ### Custom Styles
 
-All the styles are located in `public/style.css`. These styles are applied to all the pages. You can also modify 
+All the styles are located in `public/style.css`. These styles are applied to all the pages. You can also modify
 
 ### Creating subdivisions
 
