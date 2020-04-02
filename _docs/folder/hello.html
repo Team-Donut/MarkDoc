@@ -6,29 +6,30 @@
   </head>
   <body>
     <div id="layout">
-      
       <a href="#menu" id="menuLink" class="menu-link">
         <!-- Hamburger icon -->
         <span></span>
       </a>
-      
-      <nav id = "menu">
+
+      <nav id="menu">
         <ul>
-<li><a class="" href="../index.html">index</a></li>
-<li class="heading"><span>folder</span></li>
-<ul>
-<li><a class="active" href="hello.html">hello</a></li>
-</ul>
-<li><a class="" href="../hello.html">hello</a></li>
-</ul>
+          <li><a class="" href="../index.html">index</a></li>
+          <li class="heading"><span>folder</span></li>
+          <ul>
+            <li><a class="active" href="hello.html">hello</a></li>
+          </ul>
+          <li><a class="" href="../hello.html">hello</a></li>
+        </ul>
       </nav>
 
-      <article id = "main" class = "content">
-        <h1 id="another-hello">Another hello <a class="heading-anchor-permalink" href="#another-hello">#</a></h1>
-<pre><code>const express = require('express');
+      <article id="main" class="content">
+        <h1 id="another-hello">
+          Another hello
+          <a class="heading-anchor-permalink" href="#another-hello">#</a>
+        </h1>
+        <pre><code>const express = require('express');
 const app = express();
 </code></pre>
-
       </article>
     </div>
 
@@ -67,11 +68,11 @@ const app = express();
           toggleClass(menuLink, active);
         };
       })(this, this.document);
-      
+
       window.onload = function() {
         let title = document.getElementsByTagName("h1")[0].innerText;
         document.title = title;
-      }
+      };
     </script>
   </body>
 </html>
